@@ -1,0 +1,26 @@
+{
+  "action_fingerprints": {
+    "action_listen": {
+      "slots": [
+        "category",
+        "type",
+        "sub_category"
+      ]
+    },
+    "utter_goodbye": {
+      "slots": []
+    }
+  },
+  "rasa_core": "0.12.3",
+  "python": "3.6.5",
+  "max_histories": [
+    3,
+    5
+  ],
+  "ensemble_name": "rasa_core.policies.ensemble.SimplePolicyEnsemble",
+  "policy_names": [
+    "rasa_core.policies.memoization.MemoizationPolicy",
+    "policy.RestaurantPolicy"
+  ],
+  "trained_at": "20190110-083757"
+}

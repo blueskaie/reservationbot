@@ -1,0 +1,9 @@
+import requests,  json
+
+# r = requests.post("http://40.121.52.184:8088/vani-yasir/index.php/Api_controller/Category_by_type", data={'token':'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.W3siX2lkIjp7IiRpZCI6IjViYzU0NzJlZGFjMDQ3YTdlNTVkYjU5ZCJ9LCJ1c2VybmFtZSI6ImFkbWluIiwicGFzc3dvcmQiOiIyMTIzMmYyOTdhNTdhNWE3NDM4OTRhMGU0YTgwMWZjMyIsInJvbGUiOiI1YzI1ZjY2MDZkNDk4ODAyMzgwYmJiMTciLCJlbWFpbCI6InN1cHBvcnRAdmFuaS5jb20iLCJjb3VudHJ5IjoiVVNBIiwiY2l0eSI6Ildhc2hpbmd0b24iLCJpc19kZWxldGUiOjAsImZpcnN0bmFtZSI6IkFkbWluIiwibGFzdG5hbWUiOiJBZG1pbiIsIm5vIjoiQTAwMDAwMDAwMDEiLCJ1cGRhdGVfYXQiOjE1Mzk3ODU0MTZ9XQ.hwESFiv7wUudcvHjWwNcDQlkexgifNg3t-_ghdHAvuo', 'type':'Product'})
+# clist = []
+# clist = [item.name for item in r]
+response = requests.post("http://40.121.52.184:8088/vani-yasir/index.php/Api_controller/Category_by_type", data={'token':'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.W3siX2lkIjp7IiRpZCI6IjViYzU0NzJlZGFjMDQ3YTdlNTVkYjU5ZCJ9LCJ1c2VybmFtZSI6ImFkbWluIiwicGFzc3dvcmQiOiIyMTIzMmYyOTdhNTdhNWE3NDM4OTRhMGU0YTgwMWZjMyIsInJvbGUiOiI1YzI1ZjY2MDZkNDk4ODAyMzgwYmJiMTciLCJlbWFpbCI6InN1cHBvcnRAdmFuaS5jb20iLCJjb3VudHJ5IjoiVVNBIiwiY2l0eSI6Ildhc2hpbmd0b24iLCJpc19kZWxldGUiOjAsImZpcnN0bmFtZSI6IkFkbWluIiwibGFzdG5hbWUiOiJBZG1pbiIsIm5vIjoiQTAwMDAwMDAwMDEiLCJ1cGRhdGVfYXQiOjE1Mzk3ODU0MTZ9XQ.hwESFiv7wUudcvHjWwNcDQlkexgifNg3t-_ghdHAvuo', 'type':'Product'})
+response = response.json()
+clist = [item['name'] for item in response if 'name' in item]
+print(clist)

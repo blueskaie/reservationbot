@@ -1,0 +1,68 @@
+<html>
+    <head>
+        <link href="https://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <link href="static/style.css" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="https://netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>        
+        <script src="http://code.responsivevoice.org/responsivevoice.js"></script>
+        <script src="https://timeago.yarp.com/jquery.timeago.js"></script>
+    </head>
+    <body>
+        <!------ Include the above in your HEAD tag ---------->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading" id="accordion">
+                            <span class="glyphicon glyphicon-comment"></span> Chat
+                            <div class="btn-group pull-right">
+<!-- 
+                                <a type="button" class="btn btn-default btn-xs" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                                    <span class="glyphicon glyphicon-chevron-down"></span>
+                                </a> -->
+                                <select class="selectbotvoice" onchange="selectBotVoice()">
+                                    <option value="UK English Female">UK English Female</option>
+                                    <option value="UK English Male">UK English Male</option>
+                                    <option value="US English Female">US English Female</option>
+                                    <option value="US English Male">US English Male</option>
+                                    <option value="Australian Female">Australian Female</option>
+                                    <option value="Australian Male">Australian Male</option>
+                                </select>
+                            </div>
+                        </div>
+                    <div >
+                        <div class="panel-body">
+                            <ul class="chat">
+                                <li class="left clearfix"><span class="chat-img pull-left">
+                                    <img src="http://placehold.it/50/55C1E7/fff&text=U" alt="User Avatar" class="img-circle" />
+                                </span>
+                                    <div class="chat-body clearfix">
+                                        <div class="header">
+                                            <strong class="primary-font">AI Bot</strong> <small class="pull-right text-muted">
+                                               </small>
+                                        </div>
+                                        <p>
+                                            Please don't hestatied to ask any question
+                                        </p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="panel-footer">
+                            <div class="input-group">
+                                <input id="btn-input" type="text" class="form-control input-sm" placeholder="Type your message here..."/>
+                                <input id="btn-hidden-input" type="hidden" class="form-control input-sm" placeholder="Type your message here..."/>
+                                <span class="input-group-btn">
+                                    <button class="btn btn-warning btn-sm" id="btn-chat" onclick="sendRequest()">
+                                        Send</button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script src="static/script.js"></script>
+</html>
