@@ -9,9 +9,8 @@ class ActionSearchCategories(Action):
 
     def run(self, dispatcher, tracker, domain):
         myapi = SearchAPI()
-        categories = myapi.search_categories(tracker.get_slot("type"))
-        
-        return [SlotSet("matches", categories)]
+        categories = myapi.search_categories("product")
+        return [SlotSet("suggest_buttons", categories)]
 
 class ActionSearchSubCategories(Action):
     def name(self):
@@ -21,16 +20,34 @@ class ActionSearchSubCategories(Action):
         myapi = SearchAPI()
         sub_categories = myapi.search_subcategories(tracker.get_slot("category"))
         
-        return [SlotSet("matches", sub_categories)]
+        return [SlotSet("suggest_buttons", sub_categories)]
+
+class ActionSearchInformation(Action):
+    def name(self):
+        return 'action_search_information'
+
+    def run(self, dispatcher, tracker, domain):
+        myapi = SearchAPI()
+        result = myapi.search_information(tracker.get_slot("info"))
+        # dispatcher.utter_message(result)
+        return [SlotSet("suggest_text", result)]
+
+class ActionSuggestText(Action):
+    def name(self):
+        return 'action_suggest_text'
+    def run(self, dispatcher, tracker, domain):
+        print("action_suggest_text")
+        dispatcher.utter_message(tracker.get_slot("suggest_text"))
 
 class ActionSuggest(Action):
     def name(self):
         return 'action_suggest'
 
     def run(self, dispatcher, tracker, domain):
-        matches = tracker.get_slot("matches")
-        if matches:
-            dispatcher.utter_button_message("What do you want among them?", matches)
+        print("action_suggest")
+        suggest_buttons = tracker.get_slot("suggest_buttons")
+        if suggest_buttons:
+            dispatcher.utter_button_message("What do you want among them?", suggest_buttons)
         else:
             dispatcher.utter_message("I can't find what you want")
         return []

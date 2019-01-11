@@ -41,7 +41,9 @@ function sendRequest() {
                                     '<span class="glyphicon glyphicon-time"></span><time class="timeago" datetime="'+new Date()+'"></time></small>'+
                                 '</div>'+
                                 '<p>';
-    
+                                
+    var objDiv = $(".chat");
+    objDiv.scrollTop = objDiv.scrollHeight;
     $.getJSON(url, function(answers){
         if (answers.length>0){
             $.each(answers, function(i, answer){
@@ -69,6 +71,8 @@ function sendRequest() {
         $(".waiting").remove();
         $(".chat").append(bot_answer_html);
         $("time.timeago").timeago();
+        var objDiv = document.getElementById("chatbody");
+        objDiv.scrollTop = objDiv.scrollHeight;
     });    
 }
 

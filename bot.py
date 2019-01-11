@@ -6,6 +6,7 @@ from rasa_core import utils
 from rasa_core.agent import Agent
 from rasa_core.policies.memoization import MemoizationPolicy
 import requests
+import wikipedia
 logger = logging.getLogger(__name__)
 
 
@@ -36,6 +37,14 @@ class SearchAPI(object):
         except:
             return []
 
+    def search_information(self, info):
+        if info is None:
+            return "I can't catch what you want(NLU ERROR)"
+        try: 
+            result = wikipedia.summary(info)
+            return result
+        except: 
+            return "I can't find information about" + info
 
 def train_dialogue(domain_file="restaurant_domain.yml",
                    model_path="models/dialogue",

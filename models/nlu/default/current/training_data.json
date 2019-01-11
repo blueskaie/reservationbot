@@ -322,6 +322,174 @@
         "text": "good afternoon"
       },
       {
+        "intent": "needorderhelp",
+        "text": "new order"
+      },
+      {
+        "intent": "needorderhelp",
+        "text": "I need some help about new order"
+      },
+      {
+        "intent": "needorderhelp",
+        "text": "Can you help me for new order?"
+      },
+      {
+        "intent": "needinformationhelp",
+        "text": "new information"
+      },
+      {
+        "intent": "needinformationhelp",
+        "text": "I need some help about information"
+      },
+      {
+        "intent": "needinformationhelp",
+        "text": "Can you help me for information?"
+      },
+      {
+        "intent": "requestinfo",
+        "entities": [
+          {
+            "start": 32,
+            "end": 36,
+            "value": "dota",
+            "entity": "info"
+          }
+        ],
+        "text": "I am looking for information on dota"
+      },
+      {
+        "intent": "requestinfo",
+        "entities": [
+          {
+            "start": 7,
+            "end": 11,
+            "value": "dota",
+            "entity": "info"
+          }
+        ],
+        "text": "I need dota information"
+      },
+      {
+        "intent": "requestinfo",
+        "entities": [
+          {
+            "start": 0,
+            "end": 4,
+            "value": "dota",
+            "entity": "info"
+          }
+        ],
+        "text": "dota information"
+      },
+      {
+        "intent": "thankyou",
+        "text": "um thank you good bye"
+      },
+      {
+        "intent": "thankyou",
+        "text": "okay cool uh good bye thank you"
+      },
+      {
+        "intent": "thankyou",
+        "text": "okay thank you good bye"
+      },
+      {
+        "intent": "thankyou",
+        "text": "you rock"
+      },
+      {
+        "intent": "thankyou",
+        "text": "and thats all thank you and good bye"
+      },
+      {
+        "intent": "thankyou",
+        "text": "thank you and good bye"
+      },
+      {
+        "intent": "thankyou",
+        "text": "sorry about my mistakes thank you good bye"
+      },
+      {
+        "intent": "thankyou",
+        "text": "noise thank you good bye"
+      },
+      {
+        "intent": "thankyou",
+        "text": "thank you goodbye noise"
+      },
+      {
+        "intent": "thankyou",
+        "text": "okay thank you goodbye"
+      },
+      {
+        "intent": "thankyou",
+        "text": "uh thank you good bye"
+      },
+      {
+        "intent": "thankyou",
+        "text": "thank you goodbye"
+      },
+      {
+        "intent": "thankyou",
+        "text": "thank you goodbye noise thank you goodbye"
+      },
+      {
+        "intent": "thankyou",
+        "text": "breath thank you goodbye"
+      },
+      {
+        "intent": "thankyou",
+        "text": "thank you"
+      },
+      {
+        "intent": "thankyou",
+        "text": "okay thank you"
+      },
+      {
+        "intent": "thankyou",
+        "text": "thanks goodbye"
+      },
+      {
+        "intent": "thankyou",
+        "text": "ah thank you goodbye"
+      },
+      {
+        "intent": "thankyou",
+        "text": "thank you noise"
+      },
+      {
+        "intent": "thankyou",
+        "text": "thank you good bye"
+      },
+      {
+        "intent": "thankyou",
+        "text": "breath thank you very much goodbye"
+      },
+      {
+        "intent": "thankyou",
+        "text": "thanks"
+      },
+      {
+        "intent": "thankyou",
+        "text": "noise thank you goodbye"
+      },
+      {
+        "intent": "thankyou",
+        "text": "unintelligible thank you goodbye"
+      },
+      {
+        "intent": "thankyou",
+        "text": "uh okay thank you good bye"
+      },
+      {
+        "intent": "thankyou",
+        "text": "thank you bye"
+      },
+      {
+        "intent": "thankyou",
+        "text": "um okay thank you good bye"
+      },
+      {
         "intent": "inform",
         "entities": [
           {
@@ -9164,306 +9332,6 @@
           }
         ],
         "text": "im looking for thai"
-      },
-      {
-        "intent": "request_info",
-        "entities": [
-          {
-            "start": 18,
-            "end": 25,
-            "value": "address",
-            "entity": "info"
-          }
-        ],
-        "text": "do you have their address"
-      },
-      {
-        "intent": "request_info",
-        "entities": [
-          {
-            "start": 16,
-            "end": 28,
-            "value": "phone number",
-            "entity": "info"
-          }
-        ],
-        "text": "do you have its phone number"
-      },
-      {
-        "intent": "request_info",
-        "entities": [
-          {
-            "start": 17,
-            "end": 29,
-            "value": "phone number",
-            "entity": "info"
-          }
-        ],
-        "text": "can i have their phone number"
-      },
-      {
-        "intent": "request_info",
-        "entities": [
-          {
-            "start": 12,
-            "end": 24,
-            "value": "phone number",
-            "entity": "info"
-          }
-        ],
-        "text": "what is the phone number of the restaurant"
-      },
-      {
-        "intent": "request_info",
-        "entities": [
-          {
-            "start": 14,
-            "end": 21,
-            "value": "address",
-            "entity": "info"
-          }
-        ],
-        "text": "what is their address"
-      },
-      {
-        "intent": "request_info",
-        "entities": [
-          {
-            "start": 15,
-            "end": 22,
-            "value": "address",
-            "entity": "info"
-          }
-        ],
-        "text": "may i have the address of the restaurant"
-      },
-      {
-        "intent": "request_info",
-        "entities": [
-          {
-            "start": 12,
-            "end": 19,
-            "value": "address",
-            "entity": "info"
-          }
-        ],
-        "text": "whats their address"
-      },
-      {
-        "intent": "request_info",
-        "entities": [
-          {
-            "start": 18,
-            "end": 30,
-            "value": "phone number",
-            "entity": "info"
-          }
-        ],
-        "text": "do you have their phone number"
-      },
-      {
-        "intent": "request_info",
-        "entities": [
-          {
-            "start": 14,
-            "end": 26,
-            "value": "phone number",
-            "entity": "info"
-          }
-        ],
-        "text": "give me their phone number"
-      },
-      {
-        "intent": "request_info",
-        "entities": [
-          {
-            "start": 12,
-            "end": 24,
-            "value": "phone number",
-            "entity": "info"
-          }
-        ],
-        "text": "whats their phone number"
-      },
-      {
-        "intent": "request_info",
-        "entities": [
-          {
-            "start": 16,
-            "end": 23,
-            "value": "address",
-            "entity": "info"
-          }
-        ],
-        "text": "do you have its address"
-      },
-      {
-        "intent": "request_info",
-        "entities": [
-          {
-            "start": 15,
-            "end": 27,
-            "value": "phone number",
-            "entity": "info"
-          }
-        ],
-        "text": "may i have the phone number of the restaurant"
-      },
-      {
-        "intent": "request_info",
-        "entities": [
-          {
-            "start": 14,
-            "end": 26,
-            "value": "phone number",
-            "entity": "info"
-          }
-        ],
-        "text": "what is their phone number"
-      },
-      {
-        "intent": "request_info",
-        "entities": [
-          {
-            "start": 14,
-            "end": 21,
-            "value": "address",
-            "entity": "info"
-          }
-        ],
-        "text": "give me their address"
-      },
-      {
-        "intent": "request_info",
-        "entities": [
-          {
-            "start": 17,
-            "end": 24,
-            "value": "address",
-            "entity": "info"
-          }
-        ],
-        "text": "can i have their address"
-      },
-      {
-        "intent": "request_info",
-        "entities": [
-          {
-            "start": 12,
-            "end": 19,
-            "value": "address",
-            "entity": "info"
-          }
-        ],
-        "text": "what is the address of the restaurant"
-      },
-      {
-        "intent": "thankyou",
-        "text": "um thank you good bye"
-      },
-      {
-        "intent": "thankyou",
-        "text": "okay cool uh good bye thank you"
-      },
-      {
-        "intent": "thankyou",
-        "text": "okay thank you good bye"
-      },
-      {
-        "intent": "thankyou",
-        "text": "you rock"
-      },
-      {
-        "intent": "thankyou",
-        "text": "and thats all thank you and good bye"
-      },
-      {
-        "intent": "thankyou",
-        "text": "thank you and good bye"
-      },
-      {
-        "intent": "thankyou",
-        "text": "sorry about my mistakes thank you good bye"
-      },
-      {
-        "intent": "thankyou",
-        "text": "noise thank you good bye"
-      },
-      {
-        "intent": "thankyou",
-        "text": "thank you goodbye noise"
-      },
-      {
-        "intent": "thankyou",
-        "text": "okay thank you goodbye"
-      },
-      {
-        "intent": "thankyou",
-        "text": "uh thank you good bye"
-      },
-      {
-        "intent": "thankyou",
-        "text": "thank you goodbye"
-      },
-      {
-        "intent": "thankyou",
-        "text": "thank you goodbye noise thank you goodbye"
-      },
-      {
-        "intent": "thankyou",
-        "text": "breath thank you goodbye"
-      },
-      {
-        "intent": "thankyou",
-        "text": "thank you"
-      },
-      {
-        "intent": "thankyou",
-        "text": "okay thank you"
-      },
-      {
-        "intent": "thankyou",
-        "text": "thanks goodbye"
-      },
-      {
-        "intent": "thankyou",
-        "text": "ah thank you goodbye"
-      },
-      {
-        "intent": "thankyou",
-        "text": "thank you noise"
-      },
-      {
-        "intent": "thankyou",
-        "text": "thank you good bye"
-      },
-      {
-        "intent": "thankyou",
-        "text": "breath thank you very much goodbye"
-      },
-      {
-        "intent": "thankyou",
-        "text": "thanks"
-      },
-      {
-        "intent": "thankyou",
-        "text": "noise thank you goodbye"
-      },
-      {
-        "intent": "thankyou",
-        "text": "unintelligible thank you goodbye"
-      },
-      {
-        "intent": "thankyou",
-        "text": "uh okay thank you good bye"
-      },
-      {
-        "intent": "thankyou",
-        "text": "thank you bye"
-      },
-      {
-        "intent": "thankyou",
-        "text": "um okay thank you good bye"
       }
     ],
     "regex_features": [],

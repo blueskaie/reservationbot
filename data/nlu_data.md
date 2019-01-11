@@ -84,6 +84,50 @@
 - morning
 - good afternoon
 
+## intent:needorderhelp
+- new order
+- I need some help about new order
+- Can you help me for new order?
+
+## intent:needinformationhelp
+- new information
+- I need some help about information
+- Can you help me for information?
+
+## intent:requestinfo
+- I am looking for information on [dota](info)
+- I need [dota](info) information
+- [dota](info) information
+
+## intent:thankyou
+- um thank you good bye
+- okay cool uh good bye thank you
+- okay thank you good bye
+- you rock
+- and thats all thank you and good bye
+- thank you and good bye
+- sorry about my mistakes thank you good bye
+- noise thank you good bye
+- thank you goodbye noise
+- okay thank you goodbye
+- uh thank you good bye
+- thank you goodbye
+- thank you goodbye noise thank you goodbye
+- breath thank you goodbye
+- thank you
+- okay thank you
+- thanks goodbye
+- ah thank you goodbye
+- thank you noise
+- thank you good bye
+- breath thank you very much goodbye
+- thanks
+- noise thank you goodbye
+- unintelligible thank you goodbye
+- uh okay thank you good bye
+- thank you bye
+- um okay thank you good bye
+
 ## intent:inform
 - [product](type) type
 - [interrior designers](category) category
@@ -713,50 +757,3 @@
 - uh [world](category) category
 - i need a [cheap](price) restaurant
 - im looking for [thai](category)
-
-## intent:request_info
-- do you have their [address](info)
-- do you have its [phone number](info)
-- can i have their [phone number](info)
-- what is the [phone number](info) of the restaurant
-- what is their [address](info)
-- may i have the [address](info) of the restaurant
-- whats their [address](info)
-- do you have their [phone number](info)
-- give me their [phone number](info)
-- whats their [phone number](info)
-- do you have its [address](info)
-- may i have the [phone number](info) of the restaurant
-- what is their [phone number](info)
-- give me their [address](info)
-- can i have their [address](info)
-- what is the [address](info) of the restaurant
-
-## intent:thankyou
-- um thank you good bye
-- okay cool uh good bye thank you
-- okay thank you good bye
-- you rock
-- and thats all thank you and good bye
-- thank you and good bye
-- sorry about my mistakes thank you good bye
-- noise thank you good bye
-- thank you goodbye noise
-- okay thank you goodbye
-- uh thank you good bye
-- thank you goodbye
-- thank you goodbye noise thank you goodbye
-- breath thank you goodbye
-- thank you
-- okay thank you
-- thanks goodbye
-- ah thank you goodbye
-- thank you noise
-- thank you good bye
-- breath thank you very much goodbye
-- thanks
-- noise thank you goodbye
-- unintelligible thank you goodbye
-- uh okay thank you good bye
-- thank you bye
-- um okay thank you good bye

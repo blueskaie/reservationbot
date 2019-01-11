@@ -2,9 +2,9 @@
   "action_fingerprints": {
     "action_listen": {
       "slots": [
-        "category",
-        "type",
-        "sub_category"
+        "sub_category",
+        "info",
+        "category"
       ]
     },
     "utter_goodbye": {
@@ -22,5 +22,5 @@
     "rasa_core.policies.memoization.MemoizationPolicy",
     "policy.RestaurantPolicy"
   ],
-  "trained_at": "20190110-083757"
+  "trained_at": "20190112-032955"
 }
