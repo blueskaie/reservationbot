@@ -1,13 +1,9 @@
 slots:
-  type:
-    type: categorical
-    values:
-      - product
-      - information
-      - service
   category:
     type: text
   sub_category:
+    type: text
+  product:
     type: text
   people:
     type: text
@@ -21,16 +17,27 @@ slots:
     type: unfeaturized
   suggest_text:
     type: text
-
+  quantity:
+    type: text
+  test1:
+    type: unfeaturized
+    auto_fill: false
+  test2:
+    type: unfeaturized
+    auto_fill: false
+        
 entities:
 - location
 - info
 - people
 - price
 - category
-- type
 - sub_category
-
+- product
+- quantity
+- query
+- test1
+- test2
 intents:
  - greet
  - needorderhelp
@@ -39,6 +46,7 @@ intents:
  - needorderupdatehelp
  - affirm
  - deny
+ - login
  - inform
  - thankyou
  - requestinfo
@@ -69,56 +77,75 @@ templates:
     - "Is it OK for you?"
     - "Is it satified for you?"
   utter_ack_makereservation:
-    - text: "ok making a reservation of {sub_category}? "
+    - text: "ok making a reservation of {product}: {quantity}? "
       buttons:
         - title: "thank you"
           payload: "thank you"
-  utter_ask_category:
-    - text: "what kind of category would you like?"
+  utter_ack_login:
+    - text: "No, understood, Pls login  or register so that we can take ur address and contact information. "
       buttons:
-        - title: "product"
-          payload: '/inform{"type": "product"}'
-        - title: "information"
-          payload: '/inform{"type": "information"}'
-        - title: "service"
-          payload: '/inform{"type": "service"}'
+        - title: "Login"
+          payload: '/login{}'
   utter_ask_howcanhelp:
     - text: "how can I help you?"
   utter_ask_location:
     - "where?"
   utter_ask_moreupdates:
     - "if you'd like to modify anything else, please tell me what. This is what I currently have: {location} (price: {price}, category: {category}) for {people} people."
-  utter_ask_numpeople:
-    - "for how many people?"
-  utter_ask_price:
-    - text: "in which price range?"
+  utter_ask_numunits:
+    - text: "Awesome, how many units you need? 1 or 2 or 3 or pls input quantity"
       buttons:
-      - title: "cheap"
-        payload: "cheap"
-      - title: "expensive"
-        payload: "expensive"
+      - title: "1"
+        payload: '/inform{"quantity": "1"}'
+      - title: "2"
+        payload: '/inform{"quantity": "2"}'
+      - title: "3"
+        payload: '/inform{"quantity": "3"}'
+  utter_ask_ordermore:
+    - text: "Thanks, we have ur cart ready. Do u want to order something more?"
+      buttons:
+      - title: "YES"
+        payload: '/affirm{}'
+      - title: "NO"
+        payload: '/deny{}'
+  utter_ask_credential:
+    - "Please Input username and password in below fields (XXXX and YYYY)"
+    - "Can I get your username and password?(XXXX and YYYY)"
+  utter_ask_test1:
+    - "Please input test1"
+  utter_ask_test2:
+    - "Please input test2"
   utter_on_it:
     - "I'm on it"
+  utter_submit:
+    - text: "All Done!"
 
 actions:
 - utter_greet
 - utter_goodbye
 - utter_default
 - utter_ask_help
-- utter_ack_findalternatives
+- utter_ask_ordermore
 - utter_ack_makereservation
-- utter_ask_category
+- utter_ack_login
 - utter_ask_howcanhelp
 - utter_ask_location
 - utter_ask_moreupdates
-- utter_ask_numpeople
-- utter_ask_price
+- utter_ask_numunits
+- utter_ask_credential
 - utter_ask_conform
 - utter_on_it
 - utter_ask_information
 - utter_ask_satisfaction
+- utter_ask_test1
+- utter_ask_test2
 - action_search_categories
 - action_search_subcategories
+- action_search_products
 - action_search_information
 - action_suggest
 - action_suggest_text
+
+
+forms:
+  - restaurant_form

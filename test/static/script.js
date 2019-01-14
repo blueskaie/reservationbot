@@ -41,7 +41,7 @@ function sendRequest() {
                                     '<span class="glyphicon glyphicon-time"></span><time class="timeago" datetime="'+new Date()+'"></time></small>'+
                                 '</div>'+
                                 '<p>';
-
+    $("time.timeago").timeago();
 
     $.getJSON(url, function(answers){
         if (answers.length>0){

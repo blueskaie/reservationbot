@@ -2,9 +2,11 @@
   "action_fingerprints": {
     "action_listen": {
       "slots": [
-        "sub_category",
+        "category",
         "info",
-        "category"
+        "quantity",
+        "product",
+        "sub_category"
       ]
     },
     "utter_goodbye": {
@@ -15,12 +17,14 @@
   "python": "3.6.5",
   "max_histories": [
     3,
-    5
+    5,
+    2
   ],
   "ensemble_name": "rasa_core.policies.ensemble.SimplePolicyEnsemble",
   "policy_names": [
     "rasa_core.policies.memoization.MemoizationPolicy",
-    "policy.RestaurantPolicy"
+    "policy.ReservationPolicy",
+    "rasa_core.policies.form_policy.FormPolicy"
   ],
-  "trained_at": "20190112-032955"
+  "trained_at": "20190114-184402"
 }

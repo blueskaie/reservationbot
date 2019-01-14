@@ -1,0 +1,2 @@
+model_checkpoint_path: "F:\\MyWorks\\Rasa\\reservationbot\\models/nlu/default\\current\\intent_classifier_tensorflow_embedding.ckpt"
+all_model_checkpoint_paths: "F:\\MyWorks\\Rasa\\reservationbot\\models/nlu/default\\current\\intent_classifier_tensorflow_embedding.ckpt"

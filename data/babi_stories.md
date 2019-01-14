@@ -1,4 +1,4 @@
-## story_1
+## story_order_1
 * greet
  - utter_ask_help
 * needorderhelp
@@ -8,11 +8,22 @@
  - action_search_subcategories
  - action_suggest
 * inform{"sub_category": "product"}
+ - action_search_products
+ - action_suggest
+* inform{"product": "tomato"}
+ - utter_ask_numunits
+* inform{"quantity": "1"}
+ - utter_ask_ordermore
+* deny
+ - utter_ack_login
+* login
+ - utter_ask_credential
+* inform{"username": "admin", "password": "admin"}
  - utter_ack_makereservation
 * thankyou
  - utter_goodbye
 
-## story_2
+## story_information_2
 * greet
  - utter_ask_help
 * needinformationhelp
@@ -24,7 +35,7 @@
 * affirm
  - utter_goodbye
 
- ## story_3
+ ## story_information_3
 * greet
  - utter_ask_help
 * needinformationhelp

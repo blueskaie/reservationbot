@@ -1,10 +1,11 @@
 import argparse
 import logging
 
-from policy import RestaurantPolicy
+from policy import ReservationPolicy
 from rasa_core import utils
 from rasa_core.agent import Agent
 from rasa_core.policies.memoization import MemoizationPolicy
+from rasa_core.policies.form_policy import FormPolicy
 import requests
 import wikipedia
 logger = logging.getLogger(__name__)
@@ -37,6 +38,17 @@ class SearchAPI(object):
         except:
             return []
 
+    def search_products(self, cname):
+        print(cname)
+        try:
+            # response = requests.post("http://40.121.52.184:8088/vani-yasir/index.php/Api_controller/Sub_category?name="+cname+"&token="+self.my_token)
+            # response = response.json()
+            # result = [{'title': item['name'], 'payload':'/inform{"sub_category": "'+item['name']+'"}'} for item in response if 'name' in item]
+            result = [{'title': 'tomato', 'payload':'/inform{"product": "tomato"}'}, {'title': 'apple', 'payload':'/inform{"product": "apple"}'}]
+            print(result)
+            return result
+        except:
+            return []
     def search_information(self, info):
         if info is None:
             return "I can't catch what you want(NLU ERROR)"
@@ -51,9 +63,9 @@ def train_dialogue(domain_file="restaurant_domain.yml",
                    training_data_file="data/babi_stories.md"):
     agent = Agent(domain_file,
                   policies=[MemoizationPolicy(max_history=3),
-                            RestaurantPolicy(batch_size=100, epochs=400,
-                                             validation_split=0.2)])
-
+                            ReservationPolicy(batch_size=100, epochs=400,
+                                             validation_split=0.2),
+                            FormPolicy()])
     training_data = agent.load_data(training_data_file)
     agent.train(
         training_data
@@ -75,6 +87,15 @@ def train_nlu():
                                       fixed_model_name="current")
 
     return model_directory
+def test_nlu():
+    from rasa_core.interpreter import RasaNLUInterpreter
+    import json
+    interpreter = RasaNLUInterpreter('models/nlu/default/current')
+    while True:
+        print("Please message for testing")
+        message = input()
+        result = interpreter.parse(message)
+        print(json.dumps(result, indent=2))
 
 def run():
     from rasa_core.interpreter import RasaNLUInterpreter
@@ -104,7 +125,7 @@ if __name__ == '__main__':
 
     parser.add_argument(
         'task',
-        choices=["train-nlu", "train-dialogue", "run"],
+        choices=["train-nlu", "train-dialogue", "run", "test-nlu"],
         help="what the bot should do - e.g. run or train?")
     task = parser.parse_args().task
 
@@ -115,3 +136,5 @@ if __name__ == '__main__':
         train_dialogue()
     elif task == "run":
         run()
+    elif task == "test-nlu":
+        test_nlu()

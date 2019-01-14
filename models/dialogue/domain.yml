@@ -5,20 +5,23 @@ actions:
 - utter_goodbye
 - utter_default
 - utter_ask_help
-- utter_ack_findalternatives
+- utter_ask_ordermore
 - utter_ack_makereservation
-- utter_ask_category
+- utter_ack_login
 - utter_ask_howcanhelp
 - utter_ask_location
 - utter_ask_moreupdates
-- utter_ask_numpeople
-- utter_ask_price
+- utter_ask_numunits
+- utter_ask_credential
 - utter_ask_conform
 - utter_on_it
 - utter_ask_information
 - utter_ask_satisfaction
+- utter_ask_test1
+- utter_ask_test2
 - action_search_categories
 - action_search_subcategories
+- action_search_products
 - action_search_information
 - action_suggest
 - action_suggest_text
@@ -30,9 +33,14 @@ entities:
 - people
 - price
 - category
-- type
 - sub_category
-forms: []
+- product
+- quantity
+- query
+- test1
+- test2
+forms:
+- restaurant_form
 intents:
 - greet:
     use_entities: true
@@ -47,6 +55,8 @@ intents:
 - affirm:
     use_entities: true
 - deny:
+    use_entities: true
+- login:
     use_entities: true
 - inform:
     use_entities: true
@@ -75,6 +85,18 @@ slots:
     auto_fill: true
     initial_value: null
     type: rasa_core.slots.TextSlot
+  product:
+    auto_fill: true
+    initial_value: null
+    type: rasa_core.slots.TextSlot
+  quantity:
+    auto_fill: true
+    initial_value: null
+    type: rasa_core.slots.TextSlot
+  requested_slot:
+    auto_fill: true
+    initial_value: null
+    type: rasa_core.slots.UnfeaturizedSlot
   sub_category:
     auto_fill: true
     initial_value: null
@@ -87,29 +109,29 @@ slots:
     auto_fill: true
     initial_value: null
     type: rasa_core.slots.TextSlot
-  type:
-    auto_fill: true
+  test1:
+    auto_fill: false
     initial_value: null
-    type: rasa_core.slots.CategoricalSlot
-    values:
-    - product
-    - information
-    - service
+    type: rasa_core.slots.UnfeaturizedSlot
+  test2:
+    auto_fill: false
+    initial_value: null
+    type: rasa_core.slots.UnfeaturizedSlot
 templates:
+  utter_ack_login:
+  - buttons:
+    - payload: /login{}
+      title: Login
+    text: 'No, understood, Pls login  or register so that we can take ur address and
+      contact information. '
   utter_ack_makereservation:
   - buttons:
     - payload: thank you
       title: thank you
-    text: 'ok making a reservation of {sub_category}? '
-  utter_ask_category:
-  - buttons:
-    - payload: '/inform{"type": "product"}'
-      title: product
-    - payload: '/inform{"type": "information"}'
-      title: information
-    - payload: '/inform{"type": "service"}'
-      title: service
-    text: what kind of category would you like?
+    text: 'ok making a reservation of {product}: {quantity}? '
+  utter_ask_credential:
+  - text: Please Input username and password in below fields (XXXX and YYYY)
+  - text: Can I get your username and password?(XXXX and YYYY)
   utter_ask_help:
   - buttons:
     - payload: /needorderhelp{}
@@ -132,18 +154,29 @@ templates:
   - text: "if you'd like to modify anything else, please tell me what. This is what\
       \ I currently have: {location} (price: {price}, category: {category}) for {people}\
       \ people."
-  utter_ask_numpeople:
-  - text: for how many people?
-  utter_ask_price:
+  utter_ask_numunits:
   - buttons:
-    - payload: cheap
-      title: cheap
-    - payload: expensive
-      title: expensive
-    text: in which price range?
+    - payload: '/inform{"quantity": "1"}'
+      title: '1'
+    - payload: '/inform{"quantity": "2"}'
+      title: '2'
+    - payload: '/inform{"quantity": "3"}'
+      title: '3'
+    text: Awesome, how many units you need? 1 or 2 or 3 or pls input quantity
+  utter_ask_ordermore:
+  - buttons:
+    - payload: /affirm{}
+      title: 'YES'
+    - payload: /deny{}
+      title: 'NO'
+    text: Thanks, we have ur cart ready. Do u want to order something more?
   utter_ask_satisfaction:
   - text: Is it OK for you?
   - text: Is it satified for you?
+  utter_ask_test1:
+  - text: Please input test1
+  utter_ask_test2:
+  - text: Please input test2
   utter_default:
   - text: default message
   utter_goodbye:
@@ -153,3 +186,5 @@ templates:
   - text: hey there!
   utter_on_it:
   - text: I'm on it
+  utter_submit:
+  - text: All Done!
