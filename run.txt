@@ -1,8 +1,14 @@
 -bot run
 python -m rasa_core.run -d models/dialogue -u models/nlu/default/current --endpoints endpoints.yml
+
 -bot api run
 python -m rasa_core.run  --enable_api -d models/dialogue -u models/nlu/default/current --endpoints endpoints.yml
+
 -actions run
 python -m rasa_core_sdk.endpoint --actions actions
+
 -open chrome
 chrome.exe --user-data-dir="C:/Chrome dev session" --disable-web-security
+
+-visualize
+python -m rasa_core.visualize -s data/babi_stories.md -d restaurant_domain.yml -o story_graph.html

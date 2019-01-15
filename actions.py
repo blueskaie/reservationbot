@@ -40,10 +40,10 @@ class ActionSearchInformation(Action):
 
     def run(self, dispatcher, tracker, domain):
         myapi = SearchAPI()
-        searchkey = tracker.latest_message
-        print(searchkey)
+        searchkey = tracker.get_slot("info")
+        if searchkey is None:
+            searchkey = (tracker.latest_message)['text']
         result = myapi.search_information(searchkey)
-        # dispatcher.utter_message(result)
         return [SlotSet("suggest_text", result)]
 
 class ActionSuggestText(Action):

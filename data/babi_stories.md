@@ -23,7 +23,7 @@
 * thankyou
  - utter_goodbye
 
-## story_information_2
+## story_information_001
 * greet
  - utter_ask_help
 * needinformationhelp
@@ -35,7 +35,7 @@
 * affirm
  - utter_goodbye
 
- ## story_information_3
+## story_information_002
 * greet
  - utter_ask_help
 * needinformationhelp
@@ -45,4 +45,22 @@
  - action_suggest_text
  - utter_ask_satisfaction
 * thankyou
+ - utter_goodbye
+
+## story_information_002
+* greet
+ - utter_ask_help
+* needinformationhelp
+ - utter_ask_information
+* requestinfo{"info": "product"}
+ - action_search_information
+ - action_suggest_text
+ - utter_ask_satisfaction
+* deny
+ - utter_ask_information
+* requestinfo{"info": "product"}
+ - action_search_information
+ - action_suggest_text
+ - utter_ask_satisfaction
+* affirm
  - utter_goodbye
